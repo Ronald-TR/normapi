@@ -41,7 +41,7 @@ urlpatterns = [
 """
 
         rawurls = """
-            url(r'^{urlname}/$', view{urlname}, name='{urlname}'),
+    url(r'^{urlname}/$', view{urlname}, name='{urlname}'),
         """
 
         reservednames = [
@@ -85,10 +85,11 @@ def SerializeModel(model):
 def view{classname}(requests):
     if requests.method == 'POST':
         modelo = {classname}.objects.filter(**json.loads(requests.body))
-            return HttpResponse(SerializeModel(modelo), content_type='application/json')
-        if requests.method == 'GET':
-    return HttpResponse('erro, verbo indisponivel', 404)
-        """
+        jsonModelo = [SerializeModel(m) for m in modelo]
+        return HttpResponse(jsonModelo, content_type='application/json')
+    if requests.method == 'GET':
+        return HttpResponse('erro, verbo indisponivel', 404)
+"""
 
         djangoapp = import_module(appname + '.models')
         urls = ''
