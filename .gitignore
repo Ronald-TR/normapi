@@ -5,4 +5,3 @@ Lib/
 Scripts/
 tcl/
 db.sqlite3
-uvgen.py
