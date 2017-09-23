@@ -16,7 +16,7 @@ urlpatterns = [
 
 rawurls = """
     url(r'^{urlname}/$', view{urlname}, name='{urlname}'),
-        """
+"""
 
 reservednames = [
     '__builtins__',
