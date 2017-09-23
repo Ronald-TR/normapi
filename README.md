@@ -32,7 +32,8 @@ E por ultimo, configure uma rota para as urls de seu app.
 
 
 Dizer que o normapi é uma orm é errado, ela funciona como uma porque roda a django-orm em seu background.
-Por essa razão, você pode ter acesso aos metodos magicos do **manager**, assim como dos *ordersBy* da django-orm providos pela **normapi**.
+
+Por essa razão, você pode ter acesso ao QuerySet API do **manager** da django-orm nativamente providos pela interpretação da **normapi**. (Apenas disponivel o metodo order_by por enquanto)
 
 
 Todos os modelos terão por padrão suas rotas de mesmo nome.
