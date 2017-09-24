@@ -103,7 +103,7 @@ class Command(BaseCommand):
         # retrocede diretorios de acordo com o contador
         def cdDir(path, cont):
             diretorio = os.path.dirname(os.path.abspath(path))
-            if cont == 0:
+            if cont <= 0:
                 return diretorio
             cont = cont - 1
             return cdDir(diretorio, cont)
