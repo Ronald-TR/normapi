@@ -5,3 +5,11 @@ Lib/
 Scripts/
 tcl/
 db.sqlite3
+clientes/
+normapi/nucleo/migrations/
+normapi/nucleo/models.py
+normapi/nucleo/urls.py
+normapi/nucleo/views.py
+teste.py
+normapi/settings.py
+normapi/urls.py
