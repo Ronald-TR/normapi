@@ -1,3 +1,7 @@
+##
+#   Criado por: Ronald Rodrigues Farias
+#   ultima versão: 23/09/2017
+##
 from django.core.management.base import BaseCommand, CommandError
 from django.__main__ import management
 from importlib import import_module
