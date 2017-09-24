@@ -41,7 +41,7 @@ Caso queira acessar um model. Faça um POST para a rota do seu App, passando no 
 Elas serão interpretadas como o **where**
 
 Para consultar um usuario de uma tabela Usuarios cujo o campo de **id** seja id_usuario:
-fapa um POST para:
+faça um POST para:
 
 http://rota_para_seu_app/Usuarios/
 
