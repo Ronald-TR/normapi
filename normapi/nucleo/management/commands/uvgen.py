@@ -16,7 +16,8 @@ urlpatterns = [
 
 rawurls = """
     url(r'^{urlname}/$', view{urlname}, name='{urlname}'),
-        """
+
+"""
 
 reservednames = [
     '__builtins__',
@@ -41,7 +42,9 @@ reservednames = [
     'DjangoSession',
 ]
 
-views = """from django.forms import model_to_dict
+
+views = """from {appname}.models import *
+from django.forms import model_to_dict
 from django.views.decorators.csrf import csrf_exempt
 from django.http import HttpResponse
 from django.apps import apps
@@ -61,15 +64,15 @@ def SerializeModel(model):
 
 def Factory(modelname, jsonparams):
     params = json.loads(jsonparams)
-    orderby = ''
+    orderKey = ''
     try:
-        orderby = str(params.pop('order_by'))
+        orderKey = str(params.pop('order_by'))
     except:
         pass
-    if orderby == '':
+    if orderKey == '':
         objeto = apps.get_model('{app}', modelname).objects.filter(**params)
     else:
-        objeto = apps.get_model('{app}', modelname).objects.filter(**params).order_by('-' + orderby)
+        objeto = apps.get_model('{app}', modelname).objects.filter(**params).order_by('-' + orderKey)
     return objeto
 
 {indview}
@@ -81,11 +84,9 @@ rawview = """
 
 @csrf_exempt
 def view{classname}(requests):
-    if requests.method == 'POST':
-        
+    if requests.method == 'POST':    
         modelo = Factory('{classname}', requests.body)
         jsonModel = [SerializeModel(m) for m in modelo]
-        
         return HttpResponse(jsonModel, content_type='application/json')
     if requests.method == 'GET':
         return HttpResponse('erro, verbo indisponivel', 404)
