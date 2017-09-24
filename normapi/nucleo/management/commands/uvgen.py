@@ -93,7 +93,8 @@ def view{classname}(requests):
 """
 
 class Command(BaseCommand):
-    help = 'Script para migracao dos modelos da base, traçando rotas de acesso a cada uma delas, ignorando as tabelas padrões do django-admin'
+    help = """Script para migracao dos modelos da base, traçando rotas de acesso a cada uma delas,
+    ignorando as tabelas padrões do django-admin"""
 
     #def add_arguments(self, parser):
     #   parser.add_argument('appname', type=str)
