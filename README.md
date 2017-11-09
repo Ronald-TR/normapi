@@ -69,7 +69,7 @@ Outros exemplos de consultas válidas:
     {
       "nome__contains": "Django",
       "idade": "25",
-      "order_by": "idade"
+      "order_by": "nome"
   
     }
 
