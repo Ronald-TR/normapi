@@ -67,12 +67,17 @@ Outros exemplos de consultas válidas:
 
 
     {
-      "nome__contains": "Django",
+      "nome__contains": "normapi",
       "idade": "25",
-      "order_by": "nome"
+      "order_by": "id"
   
     }
 
 *Para valores de entrada hipotéticos*
+
+## Adicionado tradutor das consultas para neo4j ##
+*ainda como py modulo independente*
+
+    // to do  
 
 * #### versão beta.
